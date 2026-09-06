@@ -35,5 +35,3 @@ flowchart LR
 
     GM --> A
     AB --> A
-
-pip install -r render_requirements.txt
