@@ -2,7 +2,7 @@
 
 ### Hybrid SQL + RAG Business Intelligence Assistant
 
-SwifTBaSkeT AI is a business intelligence assistant that combines structured SQL analytics with grounded Retrieval-Augmented Generation (RAG). The system uses **hybrid query routing** because vector search alone is not suitable for analytical questions such as "What are the top 5 areas by average order value?". Analytical queries are routed to SQL for deterministic computation, while contextual and record-level questions are handled through RAG. An evidence gate evaluates retrieved context and allows the system to **abstain when evidence is insufficient**, reducing the risk of unsupported or hallucinated answers.
+SwifTBaSkeT AI is a business intelligence assistant that combines structured SQL analytics with grounded Retrieval-Augmented Generation (RAG). The system uses hybrid query routing because vector search alone is not suitable for analytical questions such as "What are the top 5 areas by average order value?". Analytical queries are routed to SQL for deterministic computation, while contextual and record-level questions are handled through RAG. An evidence gate evaluates retrieved context and allows the system to abstain when evidence is insufficient, reducing the risk of unsupported or hallucinated answers.
 
 ## 🚀 Live Demo
 
@@ -29,12 +29,11 @@ flowchart LR
     RAG --> E[FastEmbed / ONNX]
     E --> V[pgvector / HNSW]
     V --> G[Evidence Gate]
+
     G -->|Sufficient Evidence| GM[Gemini]
     G -->|Insufficient Evidence| AB[Abstain]
+
     GM --> A
     AB --> A
-```bash
-git clone https://github.com/BiswajeetPanda6574/SwifTBaSkeT-AI.git
-cd SwifTBaSkeT-AI
 
 pip install -r render_requirements.txt
