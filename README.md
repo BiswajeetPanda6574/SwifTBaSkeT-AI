@@ -33,7 +33,6 @@ flowchart LR
     G -->|Insufficient Evidence| AB[Abstain]
     GM --> A
     AB --> A
-
 ```bash
 git clone https://github.com/BiswajeetPanda6574/SwifTBaSkeT-AI.git
 cd SwifTBaSkeT-AI
