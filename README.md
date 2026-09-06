@@ -6,7 +6,7 @@ SwifTBaSkeT AI is a business intelligence assistant that combines structured SQL
 
 ## 🚀 Live Demo
 
-**Streamlit:** https://swiftbasket-ai.streamlit.app/
+**Streamlit:** https://swiftbasket-ai-ygchqgmmgzuf4ty6wg2gsg.streamlit.app/
 
 **FastAPI API Docs:** https://swiftbasket-ai.onrender.com/docs
 
