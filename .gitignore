@@ -1,0 +1,38 @@
+# Environments
+.env
+.env.*
+!.env.example
+.venv/
+venv/
+env/
+ENV/
+
+# Python
+__pycache__/
+*.pyc
+*.py[codz]
+*.egg-info/
+build/
+dist/
+
+# Jupyter
+.ipynb_checkpoints/
+.virtual_documents/
+anaconda_projects/
+
+# Data / large files
+data/
+*.jsonl
+*.dump
+
+# Streamlit
+.streamlit/secrets.toml
+
+# Logs
+*.log
+
+# Editor/OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
