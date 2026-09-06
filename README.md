@@ -34,41 +34,6 @@ flowchart LR
     GM --> A
     AB --> A
 
-## 🛠️ Tech Stack
-
-| Technology | Purpose |
-|---|---|
-| Python | Core application logic |
-| FastAPI | Backend API |
-| Streamlit | Frontend |
-| PostgreSQL / Neon | Relational database |
-| pgvector + HNSW | Vector search |
-| FastEmbed / ONNX | Local embeddings |
-| BAAI/bge-small-en-v1.5 | Embedding model |
-| Google Gemini API | SQL generation & grounded responses |
-
-**Deployment:** Streamlit Community Cloud + Render  
-**Infrastructure:** Free-tier tools only — no OpenAI, LangChain, or paid infrastructure.
-
-## 🧠 Key Engineering Decisions
-
-- **Hybrid SQL + RAG:** SQL handles analytical queries and aggregations; RAG handles contextual and record-level queries.
-- **Exact Order-ID routing:** Semantic search was unreliable for exact identifiers, so Order IDs are detected and retrieved directly from PostgreSQL.
-- **Evidence gate:** Retrieved evidence is evaluated before generation, allowing the system to `ACCEPT`, `REVIEW`, or `ABSTAIN` when evidence is insufficient.
-- **FastEmbed migration:** Replaced `sentence-transformers`/PyTorch with FastEmbed/ONNX to reduce memory usage and fit Render's 512 MB free-tier constraint.
-
-## 📊 Example Queries
-
-| Query | Route |
-|---|---|
-| What is the average order value? | SQL |
-| What are the top 5 areas by average order value? | SQL |
-| Show me the details and status of order `ORD0300000` | Exact-ID RAG |
-| What payment methods are available? | Semantic RAG |
-| Who won the 2023 Cricket World Cup? | Abstain |
-
-## 💻 Local Setup
-
 ```bash
 git clone https://github.com/BiswajeetPanda6574/SwifTBaSkeT-AI.git
 cd SwifTBaSkeT-AI
